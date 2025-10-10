@@ -568,7 +568,7 @@
 
     // === EXPLOSIÓN DE CORAZONES AL TOCAR ===
     function createHeartExplosion(x, y) {
-      const particleCount = 30;
+      const particleCount = 20;
       const hearts = ['❤️', '💖', '💗', '💕', '💘'];
       for (let i = 0; i < particleCount; i++) {
         const heart = document.createElement('div');
