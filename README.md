@@ -614,7 +614,7 @@
       "https://i.postimg.cc/DyvK0q7C/ebc109d64ce38ac17c107e6f6d7c0803.jpg",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzKL3Vr7nvWQAvuhdI_oSyCYY0LktNWABTFShtrXpRk76GpLxVKoZMPQeIj0rfGg4I3F8&usqp=CAU",
     ];
-    const imagenPrincipio = "https://st2.depositphotos.com/1031481/9719/i/450/depositphotos_97193380-stock-photo-cat-brought-roses-as-a.jpg";
+    const imagenPrincipio = "https://i.postimg.cc/ZqGXPNp3/6628d7cda99e1cc2a2206807396a2a8f.jpg";
     const imageneFinal = "https://stickerly.pstatic.net/sticker_pack/RoQKd7eh2a6EUxtCfRXefw/PTDFFC/16/1673169483582.png";
 
     const $ = (e) => document.getElementById(e);
