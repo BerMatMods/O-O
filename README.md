@@ -462,7 +462,7 @@
       <button class="btn-si" id="btnSi">Si</button>
       <button class="btn-no" id="btnNo">No</button>
     </div>
-    <div id="mensajeFinal">Sabía que aceptarías.. ᵖᵉʳᵒ ᵉˢᵖᵉʳᵃ ᵘⁿ ᵐᵒᵐᵉⁿᵗᵒ❤️</div>
+    <div id="mensajeFinal">🌹Sabía que aceptarías Mi Amor ❤️‍🔥ᵖᵉʳᵒ ᵉˢᵖᵉʳᵃ ᵘⁿ ᵐᵒᵐᵉⁿᵗᵒ❤️</div>
     <img src="" alt="gato" id="img" />
   </div>
   
