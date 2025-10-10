@@ -1,4 +1,3 @@
-
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -9,12 +8,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg-color-container: rgba(255, 250, 252, 0.96);
-      --border-color: #ff6699;
-      --bg-color-btn-si: #ff4da6;
-      --bg-color-btn-si-hover: #ff80bf;
-      --bg-color-btn-no: #5e3566;
-      --bg-color-btn-no-hover: #7a4b8a;
+      --bg-color-container: rgba(255, 245, 250, 0.98);
+      --border-color: #ff3366;
+      --bg-color-btn-si: #ff1a5e;
+      --bg-color-btn-si-hover: #ff6699;
+      --bg-color-btn-no: #4a1a4a;
+      --bg-color-btn-no-hover: #662966;
     }
 
     body {
@@ -28,60 +27,71 @@
       width: 100%;
       overflow: hidden;
       position: relative;
-      background: linear-gradient(135deg, #fff9fb, #f8f0ff, #fff0f8);
-      color: #5a2a5e;
+      background: linear-gradient(135deg, #fff0f5, #f5e6ff, #fff0f8);
+      color: #5a1a4d;
+      filter: contrast(1.1) brightness(1.05);
     }
 
     /* === ELEMENTOS DECORATIVOS EN FONDO CLARO === */
     .star {
       position: absolute;
-      color: #ffb3d9;
-      font-size: 12px;
-      opacity: 0.7;
+      color: #ff99cc;
+      font-size: 14px;
+      opacity: 0.8;
       z-index: -1;
-      animation: twinkle var(--duration, 4s) infinite ease-in-out;
+      animation: twinkle var(--duration, 3s) infinite ease-in-out;
       pointer-events: none;
+      text-shadow: 0 0 8px rgba(255, 153, 204, 0.8), 0 0 16px rgba(255, 102, 153, 0.6);
     }
 
     .spark {
       position: absolute;
-      width: 6px;
-      height: 6px;
-      background: radial-gradient(circle, #ff99cc, transparent);
+      width: 8px;
+      height: 8px;
+      background: radial-gradient(circle, #ff6699, transparent);
       border-radius: 50%;
-      box-shadow: 0 0 8px 2px #ff99cc;
+      box-shadow: 0 0 12px 4px #ff6699, 0 0 20px 8px rgba(255, 102, 153, 0.7);
       z-index: -1;
-      animation: floatSpark var(--duration, 12s) infinite ease-in-out;
-      opacity: 0.8;
+      animation: floatSpark var(--duration, 10s) infinite ease-in-out;
+      opacity: 0.9;
       pointer-events: none;
     }
 
     .floating-heart {
       position: absolute;
-      font-size: 18px;
-      color: #ff6699;
-      opacity: 0;
+      font-size: 22px;
+      color: #ff3366;
+      opacity: 0.9;
       z-index: -1;
       pointer-events: none;
-      animation: floatHeart var(--duration, 16s) infinite ease-in-out;
-      text-shadow: 0 0 6px rgba(255, 153, 204, 0.6);
+      animation: floatHeart var(--duration, 14s) infinite ease-in-out;
+      text-shadow: 0 0 10px rgba(255, 51, 102, 0.8), 0 0 20px rgba(255, 102, 153, 0.9);
+      filter: saturate(1.8);
     }
 
     @keyframes twinkle {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 0.9; }
+      0%, 100% { opacity: 0.4; text-shadow: 0 0 4px rgba(255, 153, 204, 0.6), 0 0 8px rgba(255, 102, 153, 0.4); }
+      50% { opacity: 1; text-shadow: 0 0 12px rgba(255, 153, 204, 0.9), 0 0 24px rgba(255, 102, 153, 0.8); }
     }
 
     @keyframes floatSpark {
       0% {
         transform: translateY(100vh) translateX(0);
         opacity: 0;
+        box-shadow: 0 0 6px 2px #ff6699, 0 0 12px 4px rgba(255, 102, 153, 0.5);
       }
-      10% { opacity: 0.8; }
-      90% { opacity: 0.6; }
+      10% { 
+        opacity: 0.9; 
+        box-shadow: 0 0 12px 4px #ff6699, 0 0 24px 8px rgba(255, 102, 153, 0.8);
+      }
+      90% { 
+        opacity: 0.8; 
+        box-shadow: 0 0 10px 3px #ff6699, 0 0 20px 6px rgba(255, 102, 153, 0.7);
+      }
       100% {
-        transform: translateY(-100px) translateX(var(--dx, 0));
+        transform: translateY(-150px) translateX(var(--dx, 0));
         opacity: 0;
+        box-shadow: 0 0 4px 1px #ff6699, 0 0 8px 2px rgba(255, 102, 153, 0.3);
       }
     }
 
@@ -89,96 +99,155 @@
       0% {
         transform: translateY(100vh) rotate(0deg);
         opacity: 0;
+        text-shadow: 0 0 4px rgba(255, 51, 102, 0.5), 0 0 8px rgba(255, 102, 153, 0.4);
       }
-      10% { opacity: 0.85; }
-      90% { opacity: 0.7; }
+      10% { 
+        opacity: 0.95; 
+        text-shadow: 0 0 12px rgba(255, 51, 102, 0.9), 0 0 24px rgba(255, 102, 153, 0.9);
+      }
+      90% { 
+        opacity: 0.85; 
+        text-shadow: 0 0 10px rgba(255, 51, 102, 0.8), 0 0 20px rgba(255, 102, 153, 0.8);
+      }
       100% {
-        transform: translateY(-100px) rotate(360deg);
+        transform: translateY(-150px) rotate(360deg);
         opacity: 0;
+        text-shadow: 0 0 4px rgba(255, 51, 102, 0.4), 0 0 8px rgba(255, 102, 153, 0.3);
       }
     }
 
     /* Contenedor principal */
     .box {
-      width: 80vw;
-      max-width: 400px;
+      width: 85vw;
+      max-width: 420px;
       background: var(--bg-color-container);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      border: 2px solid var(--border-color);
-      border-radius: 20px;
-      box-shadow: 0 8px 25px rgba(255, 102, 153, 0.3),
-                  inset 0 0 12px rgba(255, 230, 240, 0.8);
-      backdrop-filter: blur(6px);
-      padding: 20px;
+      border: 3px solid var(--border-color);
+      border-radius: 24px;
+      box-shadow: 
+        0 12px 30px rgba(255, 51, 102, 0.4),
+        inset 0 0 16px rgba(255, 230, 240, 0.9),
+        0 0 25px rgba(255, 102, 153, 0.6);
+      backdrop-filter: blur(8px);
+      padding: 24px;
       position: relative;
       z-index: 10;
+      transform: scale(1.02);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .box:hover {
+      transform: scale(1.03);
+      box-shadow: 
+        0 16px 36px rgba(255, 51, 102, 0.5),
+        inset 0 0 20px rgba(255, 230, 240, 0.95),
+        0 0 30px rgba(255, 102, 153, 0.7);
     }
 
     .box h1 {
       font-family: 'Pacifico', cursive;
-      font-size: 26px;
+      font-size: 28px;
       font-weight: 400;
-      margin-top: 24px;
-      margin-bottom: 14px;
+      margin-top: 26px;
+      margin-bottom: 16px;
       text-align: center;
-      color: #ff4da6;
-      text-shadow: 0 2px 6px rgba(255, 102, 153, 0.4);
-      letter-spacing: 1px;
+      color: #ff1a5e;
+      text-shadow: 
+        0 3px 8px rgba(255, 51, 102, 0.5),
+        0 0 12px rgba(255, 102, 153, 0.6),
+        0 0 20px rgba(255, 153, 204, 0.7);
+      letter-spacing: 1.2px;
+      filter: saturate(1.3);
     }
 
     .box .btn-container {
-      margin: 14px 0;
+      margin: 16px 0;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
     }
 
     .box .btn-container .btn-si,
     .box .btn-container .btn-no {
       font-family: 'Pacifico', cursive;
       color: white;
-      width: 95px;
-      height: 50px;
-      border: 2px solid var(--border-color);
-      border-radius: 50px;
-      font-size: 20px;
+      width: 110px;
+      height: 56px;
+      border: 3px solid var(--border-color);
+      border-radius: 56px;
+      font-size: 22px;
       font-weight: bold;
       cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.35s ease;
+      box-shadow: 
+        0 6px 14px rgba(0, 0, 0, 0.15),
+        0 0 12px rgba(255, 102, 153, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .box .btn-container .btn-si::before,
+    .box .btn-container .btn-no::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: 0.5s;
+    }
+
+    .box .btn-container .btn-si:hover::before,
+    .box .btn-container .btn-no:hover::before {
+      left: 100%;
     }
 
     .box .btn-container .btn-si {
       background: var(--bg-color-btn-si);
-      margin-right: 10px;
+      margin-right: 12px;
     }
 
     .box .btn-container .btn-si:hover {
       background: var(--bg-color-btn-si-hover);
-      transform: scale(1.08);
-      box-shadow: 0 0 18px rgba(255, 102, 153, 0.6);
+      transform: scale(1.12) translateY(-3px);
+      box-shadow: 
+        0 8px 20px rgba(255, 51, 102, 0.6),
+        0 0 24px rgba(255, 102, 153, 0.8);
     }
 
     .box .btn-container .btn-no {
       background: var(--bg-color-btn-no);
-      margin-left: 10px;
+      margin-left: 12px;
     }
 
     .box .btn-container .btn-no:hover {
       background: var(--bg-color-btn-no-hover);
-      transform: scale(1.05);
+      transform: scale(1.08) translateY(-2px);
+      box-shadow: 
+        0 6px 16px rgba(102, 26, 102, 0.5),
+        0 0 18px rgba(153, 51, 153, 0.6);
     }
 
     .box img {
-      width: 90%;
-      margin: 16px 0;
-      border-radius: 14px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-      transition: transform 0.4s ease;
+      width: 92%;
+      margin: 18px 0;
+      border-radius: 16px;
+      box-shadow: 
+        0 8px 20px rgba(0, 0, 0, 0.12),
+        0 0 16px rgba(255, 102, 153, 0.3);
+      transition: transform 0.45s ease, box-shadow 0.45s ease;
+      border: 2px solid rgba(255, 102, 153, 0.3);
     }
 
     .box img:hover {
-      transform: scale(1.03);
+      transform: scale(1.04);
+      box-shadow: 
+        0 10px 24px rgba(0, 0, 0, 0.15),
+        0 0 20px rgba(255, 102, 153, 0.4);
     }
 
     .hidden {
@@ -188,21 +257,24 @@
     /* Mensaje final adornado */
     #mensajeFinal {
       font-family: 'Pacifico', cursive;
-      font-size: 28px;
-      color: #ff3366;
+      font-size: 30px;
+      color: #ff0033;
       text-align: center;
-      margin: 10px 0;
-      text-shadow: 0 0 10px rgba(255, 102, 153, 0.7),
-                   0 0 20px rgba(255, 200, 220, 0.8);
-      animation: pulse 2s infinite alternate;
+      margin: 12px 0;
+      text-shadow: 
+        0 0 12px rgba(255, 51, 102, 0.8),
+        0 0 24px rgba(255, 153, 204, 0.9),
+        0 0 36px rgba(255, 200, 220, 0.95);
+      animation: pulse 1.8s infinite alternate;
       opacity: 0;
       transform: scale(0.8);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transition: opacity 0.7s ease, transform 0.7s ease;
+      filter: saturate(1.5);
     }
 
     @keyframes pulse {
-      from { transform: scale(1); }
-      to { transform: scale(1.03); }
+      from { transform: scale(1); text-shadow: 0 0 12px rgba(255, 51, 102, 0.8), 0 0 24px rgba(255, 153, 204, 0.9); }
+      to { transform: scale(1.05); text-shadow: 0 0 16px rgba(255, 51, 102, 0.9), 0 0 32px rgba(255, 153, 204, 0.95), 0 0 48px rgba(255, 200, 220, 1); }
     }
 
     .show-message {
@@ -213,37 +285,51 @@
     /* Créditos fuera del cuadro */
     .credits {
       position: absolute;
-      bottom: 20px;
+      bottom: 22px;
       left: 50%;
       transform: translateX(-50%);
       font-family: 'Pacifico', cursive;
-      font-size: 17px;
-      color: #ff6699;
+      font-size: 18px;
+      color: #ff3366;
       text-align: center;
-      text-shadow: 0 1px 3px rgba(255, 102, 153, 0.5);
-      letter-spacing: 1.2px;
+      text-shadow: 
+        0 2px 4px rgba(255, 51, 102, 0.5),
+        0 0 8px rgba(255, 102, 153, 0.6),
+        0 0 16px rgba(255, 153, 204, 0.7);
+      letter-spacing: 1.4px;
       z-index: 5;
+      filter: saturate(1.4);
     }
 
     /* Corazones de explosión (claros y brillantes) */
     .heart-particle {
       position: absolute;
-      font-size: 22px;
-      color: #ff4da6;
+      font-size: 26px;
+      color: #ff0033;
       pointer-events: none;
       z-index: 20;
-      animation: explode 1.3s forwards;
-      text-shadow: 0 0 6px white, 0 0 10px #ffd6e8;
+      animation: explode 1.4s forwards;
+      text-shadow: 
+        0 0 8px white, 
+        0 0 16px #ff99cc, 
+        0 0 24px #ff6699, 
+        0 0 32px #ff3366;
+      filter: saturate(2.2) brightness(1.3);
     }
 
     @keyframes explode {
       0% {
-        transform: translate(0, 0) scale(0.4);
+        transform: translate(0, 0) scale(0.3);
         opacity: 1;
+        text-shadow: 0 0 4px white, 0 0 8px #ff99cc, 0 0 12px #ff6699;
+      }
+      50% {
+        text-shadow: 0 0 12px white, 0 0 24px #ff99cc, 0 0 36px #ff6699, 0 0 48px #ff3366;
       }
       100% {
-        transform: translate(var(--tx), var(--ty)) scale(1.3);
+        transform: translate(var(--tx), var(--ty)) scale(1.5);
         opacity: 0;
+        text-shadow: 0 0 2px white, 0 0 4px #ff99cc, 0 0 6px #ff6699;
       }
     }
 
@@ -433,13 +519,16 @@
       justify-content: center;
       align-items: center;
       font-family: 'Pacifico', cursive;
-      font-size: 120px;
-      color: #ff3366;
-      text-shadow: 0 0 20px rgba(255, 102, 153, 0.8),
-                   0 0 40px rgba(255, 200, 220, 0.9);
+      font-size: 130px;
+      color: #ff0033;
+      text-shadow: 
+        0 0 24px rgba(255, 51, 102, 0.9),
+        0 0 48px rgba(255, 153, 204, 0.95),
+        0 0 72px rgba(255, 200, 220, 1);
       z-index: 50;
       opacity: 0;
       pointer-events: none;
+      filter: saturate(1.6);
     }
 
     .show-countdown {
@@ -448,13 +537,47 @@
     }
 
     @keyframes pulseCountdown {
-      0% { transform: scale(0.5); opacity: 0; }
-      50% { transform: scale(1.2); opacity: 1; }
-      100% { transform: scale(1); opacity: 1; }
+      0% { transform: scale(0.4); opacity: 0; text-shadow: 0 0 12px rgba(255, 51, 102, 0.7), 0 0 24px rgba(255, 153, 204, 0.8); }
+      50% { transform: scale(1.3); opacity: 1; text-shadow: 0 0 30px rgba(255, 51, 102, 0.9), 0 0 60px rgba(255, 153, 204, 0.95), 0 0 90px rgba(255, 200, 220, 1); }
+      100% { transform: scale(1); opacity: 1; text-shadow: 0 0 24px rgba(255, 51, 102, 0.9), 0 0 48px rgba(255, 153, 204, 0.95), 0 0 72px rgba(255, 200, 220, 1); }
+    }
+
+    /* Etiqueta de no comercial */
+    .non-commercial-tag {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background: rgba(255, 245, 250, 0.97);
+      border: 3px solid #ff3366;
+      border-radius: 14px;
+      padding: 10px 18px;
+      font-family: 'Pacifico', cursive;
+      font-size: 15px;
+      color: #ff0033;
+      text-align: center;
+      box-shadow: 
+        0 6px 16px rgba(255, 51, 102, 0.4),
+        inset 0 0 8px rgba(255, 230, 240, 0.8),
+        0 0 20px rgba(255, 102, 153, 0.5);
+      z-index: 1000;
+      max-width: 190px;
+      line-height: 1.3;
+      opacity: 0;
+      transform: translateY(-25px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      filter: saturate(1.4);
+    }
+
+    .show-tag {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
 <body>
+  <!-- Etiqueta de no comercial -->
+  <div class="non-commercial-tag">✨ Contenido gratuito<br>No para venta/comercialización</div>
+
   <!-- Contenedor principal de la pregunta -->
   <div class="box" id="question-box">
     <h1 id="title">¿Quieres ser mi novia? 🥺</h1>
@@ -462,7 +585,7 @@
       <button class="btn-si" id="btnSi">Si</button>
       <button class="btn-no" id="btnNo">No</button>
     </div>
-    <div id="mensajeFinal">🌹Sabía que aceptarías Mi Amor ❤️‍🔥ᵖᵉʳᵒ ᵉˢᵖᵉʳᵃ ᵘⁿ ᵐᵒᵐᵉⁿᵗᵒ❤️</div>
+    <div id="mensajeFinal">🌹Sabía que aceptarías Mi Amor..... ❤️‍🔥ᵖᵉʳᵒ ᵉˢᵖᵉʳᵃ ᵘⁿ ᵐᵒᵐᵉⁿᵗᵒ❤️</div>
     <img src="" alt="gato" id="img" />
   </div>
   
@@ -530,46 +653,46 @@
       const width = window.innerWidth;
       const height = window.innerHeight;
 
-      // Estrellas (emojis)
-      const stars = ['✨', '🌟', '⭐'];
-      for (let i = 0; i < 80; i++) {
+      // Estrellas (emojis) - más brillantes y con más contraste
+      const stars = ['✨', '🌟', '⭐', '💫'];
+      for (let i = 0; i < 100; i++) {
         const el = document.createElement('div');
         el.className = 'star';
         el.textContent = stars[Math.floor(Math.random() * stars.length)];
         el.style.left = `${Math.random() * 100}%`;
         el.style.top = `${Math.random() * 100}%`;
-        el.style.setProperty('--duration', `${3 + Math.random() * 5}s`);
-        el.style.fontSize = `${10 + Math.random() * 8}px`;
+        el.style.setProperty('--duration', `${2 + Math.random() * 4}s`);
+        el.style.fontSize = `${12 + Math.random() * 10}px`;
         body.appendChild(el);
       }
 
-      // Chispas
-      for (let i = 0; i < 20; i++) {
+      // Chispas - más brillantes y con más sombras
+      for (let i = 0; i < 25; i++) {
         const spark = document.createElement('div');
         spark.className = 'spark';
         spark.style.left = `${Math.random() * 100}%`;
-        spark.style.setProperty('--duration', `${10 + Math.random() * 8}s`);
-        spark.style.setProperty('--dx', `${(Math.random() - 0.5) * 250}px`);
+        spark.style.setProperty('--duration', `${8 + Math.random() * 6}s`);
+        spark.style.setProperty('--dx', `${(Math.random() - 0.5) * 300}px`);
         body.appendChild(spark);
       }
 
-      // Corazones flotantes
-      const hearts = ['❤️', '💖', '💗', '💕'];
-      for (let i = 0; i < 10; i++) {
+      // Corazones flotantes - más saturados, brillantes y en toda la pantalla
+      const hearts = ['❤️', '💖', '💗', '💕', '💘', '💝'];
+      for (let i = 0; i < 15; i++) {
         const heart = document.createElement('div');
         heart.className = 'floating-heart';
         heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
         heart.style.left = `${Math.random() * 100}%`;
-        heart.style.setProperty('--duration', `${14 + Math.random() * 8}s`);
-        heart.style.fontSize = `${16 + Math.random() * 10}px`;
+        heart.style.setProperty('--duration', `${12 + Math.random() * 6}s`);
+        heart.style.fontSize = `${20 + Math.random() * 12}px`;
         body.appendChild(heart);
       }
     }
 
     // === EXPLOSIÓN DE CORAZONES AL TOCAR ===
     function createHeartExplosion(x, y) {
-      const particleCount = 20;
-      const hearts = ['❤️', '💖', '💗', '💕', '💘'];
+      const particleCount = 25;
+      const hearts = ['💘', '💖', '💗', '💕', '💘', '💝', '💓'];
       for (let i = 0; i < particleCount; i++) {
         const heart = document.createElement('div');
         heart.className = 'heart-particle';
@@ -578,7 +701,7 @@
         heart.style.top = `${y}px`;
 
         const angle = Math.random() * Math.PI * 2;
-        const distance = 50 + Math.random() * 160;
+        const distance = 60 + Math.random() * 180;
         const tx = Math.cos(angle) * distance;
         const ty = Math.sin(angle) * distance;
 
@@ -586,7 +709,7 @@
         heart.style.setProperty('--ty', `${ty}px`);
 
         document.body.appendChild(heart);
-        setTimeout(() => heart.remove(), 1300);
+        setTimeout(() => heart.remove(), 1400);
       }
     }
 
@@ -597,6 +720,11 @@
 
     // Iniciar decoración
     createLightDecor();
+
+    // === AUDIO PARA BOTONES Y CUENTA REGRESIVA ===
+    const noAudio = new Audio('https://files.catbox.moe/3ca9ap.mp3');
+    const siAudio = new Audio('https://files.catbox.moe/04m5y2.mp3');
+    const countdownAudio = new Audio('https://files.catbox.moe/7zbkhk.mp3');
 
     // === TU CÓDIGO ORIGINAL (AJUSTADO PARA MENSAJE FINAL ADORNADO) ===
     const FRASES = [
@@ -628,6 +756,7 @@
     const questionBox = $("question-box");
     const galaxyContainer = $("galaxy-container");
     const countdownEl = $("countdown");
+    const nonCommercialTag = document.querySelector('.non-commercial-tag');
     let contador = 0;
 
     const preloadImages = (images) => {
@@ -641,11 +770,25 @@
     img.src = imagenPrincipio;
 
     btnSi.addEventListener("click", () => {
+      // Reproducir audio del "Sí"
+      siAudio.currentTime = 0;
+      siAudio.play().catch(e => console.log("Error al reproducir audio Sí:", e));
+      
       // Mostrar mensaje y imagen final
       title.classList.add("hidden");
       img.src = imageneFinal;
       btnContainer.classList.add("hidden");
       mensajeFinalEl.classList.add("show-message");
+      
+      // Mostrar etiqueta no comercial después de 2 segundos
+      setTimeout(() => {
+        nonCommercialTag.classList.add("show-tag");
+        
+        // Ocultar etiqueta después de 5 segundos
+        setTimeout(() => {
+          nonCommercialTag.classList.remove("show-tag");
+        }, 5000);
+      }, 2000);
       
       // Esperar 2 segundos antes de mostrar la cuenta regresiva
       setTimeout(() => {
@@ -664,6 +807,10 @@
           const countdownInterval = setInterval(() => {
             count--;
             if (count >= 0) {
+              // Reproducir audio de cuenta regresiva
+              countdownAudio.currentTime = 0;
+              countdownAudio.play().catch(e => console.log("Error al reproducir audio cuenta regresiva:", e));
+              
               countdownEl.textContent = count;
               countdownEl.style.animation = 'none';
               setTimeout(() => {
@@ -685,6 +832,10 @@
     });
 
     btnNo.addEventListener("click", () => {
+      // Reproducir audio del "No"
+      noAudio.currentTime = 0;
+      noAudio.play().catch(e => console.log("Error al reproducir audio No:", e));
+      
       if (FRASES.length > contador) {
         title.textContent = FRASES[contador];
         img.src = TIMAGENES[contador].trim();
@@ -808,23 +959,23 @@
         bgCanvas.width/2, bgCanvas.height/2, 0,
         bgCanvas.width/2, bgCanvas.height/2, bgCanvas.width/2
       );
-      gradient.addColorStop(0, 'rgba(255, 102, 170, 0.1)');
-      gradient.addColorStop(0.5, 'rgba(255, 51, 102, 0.05)');
-      gradient.addColorStop(1, 'rgba(20, 5, 20, 0.3)');
+      gradient.addColorStop(0, 'rgba(255, 102, 170, 0.15)');
+      gradient.addColorStop(0.5, 'rgba(255, 51, 102, 0.08)');
+      gradient.addColorStop(1, 'rgba(20, 5, 20, 0.35)');
       
       bgCtx.fillStyle = gradient;
       bgCtx.fillRect(0, 0, bgCanvas.width, bgCanvas.height);
       
       // Añadir estrellas rosadas
-      for (let i = 0; i < 2000; i++) {
+      for (let i = 0; i < 2500; i++) {
         const x = Math.random() * bgCanvas.width;
         const y = Math.random() * bgCanvas.height;
-        const size = Math.random() * 2;
-        const opacity = Math.random() * 0.8 + 0.2;
+        const size = Math.random() * 2.5;
+        const opacity = Math.random() * 0.9 + 0.2;
         
         bgCtx.beginPath();
         bgCtx.arc(x, y, size, 0, Math.PI * 2);
-        bgCtx.fillStyle = `rgba(255, ${100 + Math.random() * 100}, ${150 + Math.random() * 50}, ${opacity})`;
+        bgCtx.fillStyle = `rgba(255, ${120 + Math.random() * 80}, ${160 + Math.random() * 40}, ${opacity})`;
         bgCtx.fill();
       }
       
@@ -832,7 +983,7 @@
       scene.background = bgTexture;
 
       // Estrellas rosadas
-      (function(e = 2000, t = 3000) {
+      (function(e = 2200, t = 3200) {
         const n = new THREE.BufferGeometry();
         const a = new Float32Array(3 * e);
         const colors = new Float32Array(3 * e);
@@ -844,10 +995,10 @@
           a[3 * i + 1] = radius * Math.cos(phi);
           a[3 * i + 2] = radius * Math.sin(phi) * Math.sin(theta);
           
-          // Colores rosados para las estrellas
+          // Colores rosados para las estrellas - más saturados
           const r = 1.0;
-          const g = 0.4 + Math.random() * 0.4;
-          const b = 0.6 + Math.random() * 0.4;
+          const g = 0.3 + Math.random() * 0.5;
+          const b = 0.5 + Math.random() * 0.5;
           colors[3 * i + 0] = r;
           colors[3 * i + 1] = g;
           colors[3 * i + 2] = b;
@@ -855,7 +1006,7 @@
         n.setAttribute("position", new THREE.BufferAttribute(a, 3));
         n.setAttribute("color", new THREE.BufferAttribute(colors, 3));
         scene.add(new THREE.Points(n, new THREE.PointsMaterial({ 
-          size: 1.5, 
+          size: 1.8, 
           vertexColors: true,
           depthWrite: false 
         })));
@@ -880,7 +1031,7 @@
         ctx.textBaseline = "middle";
         ctx.fillStyle = "#ff0033";
         ctx.shadowColor = "#ff66aa";
-        ctx.shadowBlur = 50;
+        ctx.shadowBlur = 60;
         ctx.fillText(text, canvas.width / 2, canvas.height / 2);
         return new THREE.CanvasTexture(canvas);
       }
@@ -901,8 +1052,8 @@
         canvas.width = canvas.height = size;
         const ctx = canvas.getContext("2d");
         const grad = ctx.createRadialGradient(size/2, size/2, 0.05*size, size/2, size/2, 0.5*size);
-        grad.addColorStop(0, `rgba(${inner},0.9)`);
-        grad.addColorStop(0.5, `rgba(${outer},0.5)`);
+        grad.addColorStop(0, `rgba(${inner},0.95)`);
+        grad.addColorStop(0.5, `rgba(${outer},0.6)`);
         grad.addColorStop(1, "rgba(0,0,0,0)");
         ctx.fillStyle = grad;
         ctx.fillRect(0, 0, size, size);
@@ -925,9 +1076,9 @@
         const inner = 0.34 * size;
         const outer = 0.49 * size;
         const grad = ctx.createRadialGradient(0,0,0.3*inner, 0,0,outer);
-        grad.addColorStop(0, "rgba(255,200,220,1)");
-        grad.addColorStop(0.3, "rgba(255,102,170,0.9)");
-        grad.addColorStop(0.65, "rgba(255,51,102,0.6)");
+        grad.addColorStop(0, "rgba(255,220,240,1)");
+        grad.addColorStop(0.3, "rgba(255,102,170,0.95)");
+        grad.addColorStop(0.65, "rgba(255,51,102,0.7)");
         grad.addColorStop(1, "rgba(0,0,0,0)");
         ctx.fillStyle = grad;
         ctx.beginPath();
@@ -939,7 +1090,7 @@
       }
 
       const ring1 = new THREE.Mesh(new THREE.RingGeometry(60, 80, 128), new THREE.MeshBasicMaterial({ map: ringTexture(), transparent: true, side: THREE.DoubleSide }));
-      const ring2 = new THREE.Mesh(new THREE.RingGeometry(85, 100, 128), new THREE.MeshBasicMaterial({ map: ringTexture(), transparent: true, side: THREE.DoubleSide, opacity: 0.6 }));
+      const ring2 = new THREE.Mesh(new THREE.RingGeometry(85, 100, 128), new THREE.MeshBasicMaterial({ map: ringTexture(), transparent: true, side: THREE.DoubleSide, opacity: 0.7 }));
       ring1.rotation.x = ring2.rotation.x = Math.PI / 2;
       scene.add(ring1, ring2);
 
@@ -969,7 +1120,7 @@
         ctx.textBaseline = "middle";
         ctx.fillStyle = "#fff";
         ctx.shadowColor = shadowColor;
-        ctx.shadowBlur = 30;
+        ctx.shadowBlur = 40;
         ctx.fillText(text, canvas.width / 2, canvas.height / 2);
         return new THREE.CanvasTexture(canvas);
       }
@@ -1102,14 +1253,14 @@
         ring1.rotation.z += 0.002;
         ring2.rotation.z -= 0.0015;
 
-        const glowScale = 500 * (1 + 0.03 * Math.sin(0.4 * t));
+        const glowScale = 500 * (1 + 0.04 * Math.sin(0.4 * t));
         glow.scale.set(glowScale, glowScale, 1);
 
-        const coreScale = 1 + 0.05 * Math.sin(3 * t);
+        const coreScale = 1 + 0.06 * Math.sin(3 * t);
         core.scale.set(coreScale, coreScale, coreScale);
 
         textGroup.children.forEach(sprite => {
-          sprite.material.opacity = 0.8 + 0.2 * Math.sin(2 * t + sprite.userData.radius * 0.01);
+          sprite.material.opacity = 0.85 + 0.25 * Math.sin(2 * t + sprite.userData.radius * 0.01);
           sprite.userData.theta += sprite.userData.speed;
           const { phi, theta, radius } = sprite.userData;
           sprite.position.x = radius * Math.sin(phi) * Math.cos(theta);
