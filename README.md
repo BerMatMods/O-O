@@ -462,7 +462,7 @@
       <button class="btn-si" id="btnSi">Si</button>
       <button class="btn-no" id="btnNo">No</button>
     </div>
-    <div id="mensajeFinal">Sabía que aceptarías ❤️</div>
+    <div id="mensajeFinal">Sabía que aceptarías.. ᵖᵉʳᵒ ᵉˢᵖᵉʳᵃ ᵘⁿ ᵐᵒᵐᵉⁿᵗᵒ❤️</div>
     <img src="" alt="gato" id="img" />
   </div>
   
@@ -568,7 +568,7 @@
 
     // === EXPLOSIÓN DE CORAZONES AL TOCAR ===
     function createHeartExplosion(x, y) {
-      const particleCount = 20;
+      const particleCount = 30;
       const hearts = ['❤️', '💖', '💗', '💕', '💘'];
       for (let i = 0; i < particleCount; i++) {
         const heart = document.createElement('div');
@@ -603,7 +603,7 @@
       "Andale 🤕",
       "Dí que sii 😖",
       "Porfa 🥺",
-      "Cuchurrumin 😩",
+      "Di si preciosa 😩",
       "No seas asi 💔",
     ];
 
