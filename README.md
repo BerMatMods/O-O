@@ -863,7 +863,7 @@
 
       // Núcleo con tu foto
       const coreGeo = new THREE.SphereGeometry(40, 64, 64);
-      const coreTexture = loader.load("https://i.postimg.cc/85dXh018/1760073116.png");
+      const coreTexture = loader.load("https://i.postimg.cc/NFgJbkMv/1760072831.png");
       coreTexture.colorSpace = THREE.SRGBColorSpace;
       const coreMat = new THREE.MeshBasicMaterial({ map: coreTexture });
       const core = new THREE.Mesh(coreGeo, coreMat);
